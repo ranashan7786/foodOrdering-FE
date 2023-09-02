@@ -1,0 +1,19 @@
+<div class="login">
+    <div ng-controller="loginController as vm" ng-init="vm.init()" class="login-container">
+        <h1>Login Page</h1>
+        <form ng-submit="vm.login()">
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" id="Email" ng-model="Email" required>
+                </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" ng-model="vm.password" required>
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <div ng-show="vm.loginError" style="color: red;"></div>
+    </div>
+</div>

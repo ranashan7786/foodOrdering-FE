@@ -1,0 +1,15 @@
+div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  
+}
+div a{
+    background-color: lightcoral;
+    padding: .3rem .5rem;
+    margin: .2rem .15rem;
+    border-radius: 10rem;
+    color: white;
+    font-weight: 600;
+}
