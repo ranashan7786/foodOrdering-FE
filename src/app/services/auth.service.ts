@@ -11,7 +11,7 @@ export class AuthService {
     (formData: any) {
       throw new Error('Method not implemented.');
   }
-  private apiUrl = 'http://localhost:8080/api';
+  private apiUrl = 'http://localhost:5000/api/users/login';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -20,27 +20,28 @@ export class AuthService {
     const body = { email, password };
     return this.httpClient.post(`${this.apiUrl}/login`, body);
   }
-
-  register(email: string, password: string, name: string, confirmPassword: string ): Observable<any> {
-    const signUpPayload = new FormData();
-    signUpPayload.append('email', email)
-    signUpPayload.append('password', password)
-    signUpPayload.append('conformPassword', confirmPassword)
-    signUpPayload.append('name', name)
-    signUpPayload.append('role', 'buyer')
-
-    // Send a POST request to the server to register a new user
-    return this.httpClient.post(`${this.apiUrl}/register`, signUpPayload);
-  }
-
-  logout(): void {
-    // Perform logout operations, such as clearing session data or tokens
-  }
-
-  isAuthenticated(): boolean {
-    // Check if the user is authenticated by verifying their token or session
-    return true; // Replace with actual authentication logic
-  }
 }
+
+//   register(email: string, password: string, name: string, confirmPassword: string ): Observable<any> {
+//     const signUpPayload = new FormData();
+//     signUpPayload.append('email', email)
+//     signUpPayload.append('password', password)
+//     signUpPayload.append('conformPassword', confirmPassword)
+//     signUpPayload.append('name', name)
+//     signUpPayload.append('role', 'buyer')
+
+//     // Send a POST request to the server to register a new user
+//     return this.httpClient.post(`${this.apiUrl}/register`, signUpPayload);
+//   }
+
+//   logout(): void {
+//     // Perform logout operations, such as clearing session data or tokens
+//   }
+
+//   isAuthenticated(): boolean {
+//     Check if the user is authenticated by verifying their token or session
+//     return true; // Replace with actual authentication logic
+//   }
+// }
 
 

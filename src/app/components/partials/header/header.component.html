@@ -6,19 +6,16 @@
         <nav>
         
             <ul>
-                 <li>
+                 <li *ngIf="!isAuth">
                     <a routerLink="/login">Login</a>
                     
                 </li>
-                <li>
-                    <a routerLink="/signup">Signup</a>
-                </li>
-                <li class="menu-container">
-                    <a routerLink="/dashboard">Arslan</a>
+                    <li *ngIf="isAuth"    class="menu-container">
+                    <a routerLink="/dashboard">{{user.name}}</a>
                     <div class="menu">
                         <a routerLink="/Profile">Profile</a>
                         <a routerLink="Order">Order</a>
-                        <a routerLink="/Logout">Logout</a>
+                        <a (click)="logout()">Logout</a>
                     
                     </div>
 

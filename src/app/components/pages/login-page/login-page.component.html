@@ -1,3 +1,58 @@
+<body>
+    
+    <div class="login-container">
+        <div class="details">
+        <app-title title="Login"class="title"></app-title>
+
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+           
+
+               <div  class="input-container">
+                <label>Email</label>
+               
+               <div>
+                   <input type="email" placeholder="Email" formControlName="email">
+                </div>
+                <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
+                    <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
+                    <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
+                    
+                </div>
+                
+            
+         </div>
+      
+            <div class="input-container">
+                <label>Password</label>
+               
+                <div>
+                    <input type="password" placeholder="Password" formControlName="password">
+                    <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+                    <div *ngIf="fc['password'].errors['required']">Should not be empty</div>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <div class="login">
     <div ng-controller="loginController as vm" ng-init="vm.init()" class="login-container">
         <h1>Login Page</h1>
@@ -5,10 +60,15 @@
             <div>
                 <label for="email">Email:</label>
                 <input type="text" id="Email" ng-model="Email" required>
-                </div>
+                <!-- <div class="error-list" ngif="fc.email.errors && isSubmitted">
+                    <div *ngIf="fc.email.errors.required">Should not be empty</div>
+                    <div *ngIf="fc.email.errors.email">Email is not correct</div>
+                </div> -->
+                <!-- </div>
             <div>
                 <label for="password">Password:</label>
                 <input type="password" id="password" ng-model="vm.password" required>
+               
             </div>
             <div>
                 <button type="submit">Login</button>
@@ -16,4 +76,4 @@
         </form>
         <div ng-show="vm.loginError" style="color: red;"></div>
     </div>
-</div>
+<!-- </div> --> 

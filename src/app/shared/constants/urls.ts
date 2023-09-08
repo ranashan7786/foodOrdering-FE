@@ -1,5 +1,5 @@
-import { Login } from 'react-admin';
-import { user } from './../models/user';
+// import { Login } from 'react-admin';
+// import { user } from './../models/user';
 const BASE_URL = 'http://localhost:5000';
 
 export const FOODS_URL = BASE_URL + '/api/foods';

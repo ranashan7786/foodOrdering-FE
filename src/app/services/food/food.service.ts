@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Tag } from 'src/app/shared/models/Tag';
 import { Foods } from 'src/app/shared/models/food';
@@ -10,7 +11,7 @@ export class FoodService {
   static getFoodById(arg0: any): any {
     throw new Error('Method not implemented.');
   }
-  constructor() {}
+  constructor(private http:HttpClient) {}
 
 
   getFoodById(id:number): Foods{
